@@ -1,0 +1,70 @@
+<md-card>
+
+  <div ng-cloak ng-controller="InnovationController">
+    <md-content>
+      <md-tabs md-dynamic-height md-border-bottom>
+
+        <md-tab label="Apps" style="width:20%;">
+
+          <md-content class="md-padding" style="overflow-y:hidden;">               
+            <div ng-cloak>
+            <md-card ng-repeat="card in cardData">
+                <img ng-src="{{imagePath}}" class="md-card-image" alt="Washed Out">
+                <md-card-title>
+                  <md-card-title-text>
+                    <span class="md-headline">{{card.title}}</span>
+                  </md-card-title-text>
+                </md-card-title>
+                <md-card-content>
+                  <p>
+                    {{card.text}}
+                  </p>
+                </md-card-content>
+                <md-card-actions layout="row" layout-align="end center">
+                  <md-button class="md-icon-button" aria-label="Favorite">
+                    <md-icon md-svg-icon=""></md-icon>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Settings">
+                    <md-icon md-svg-icon=""></md-icon>
+                  </md-button>
+                  <md-button class="md-icon-button" aria-label="Share">
+                    <md-icon md-svg-icon=""></md-icon>
+                  </md-button>
+                </md-card-actions>
+              </md-card>
+
+              </div>
+
+          </md-content>
+        </md-tab>
+
+      <md-tab label="Robotics">
+        <md-content class="md-padding">
+
+        </md-content>
+      </md-tab>
+
+
+      <md-tab label="Start-up">
+        <md-content class="md-padding">
+
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Start-up">
+        <md-content class="md-padding">
+
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+  </md-content>
+</div>
+
+</md-card>
+
+
+
+
+
+

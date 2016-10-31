@@ -1,0 +1,38 @@
+<md-dialog aria-label="Login" style="width:500px;" ng-controller="loginController">
+  <form ng-cloak>
+    <md-toolbar >
+      <div class="md-toolbar-tools" layout-align="center center">
+        <h2>Login</h2>
+      </div>
+    </md-toolbar>
+
+    <md-dialog-content layout="column">
+    <!-- Username field -->
+      <div class="md-dialog-content" style="padding-bottom:0px;">
+      		<md-input-container class="md-block" flex-gt-sm>
+            <label>Username</label>
+            <input ng-model="username">
+          	</md-input-container>
+
+      </div>
+      <!-- Password field -->
+      <div class="md-dialog-content" style="padding-bottom:0px;padding-top:0px;margin-bottom:0px;">
+      		<md-input-container class="md-block" style="margin-bottom:0px;">
+            <label>Password</label>
+            <input ng-model="password" type="password">
+          	</md-input-container>
+
+      </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout="row">
+      <md-button ng-click="cancel()">
+       Back
+      </md-button>
+      <md-button ng-click="Check(username,password)">
+        Next
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="main">
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="../imports/angular-material/angular-material.css">
+    <link rel="stylesheet" type="text/css" href="../imports/nvd3/build/nv.d3.css">
+    <link rel="stylesheet" type="text/css" href="../imports/mdDataTable/dist/md-data-table-style.css">
+    <link rel="stylesheet" type="text/css" href="../imports/angular-material-icons/angular-material-icons.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<style type="text/css">
+    body{
+        background-color: #ffffff;
+    }
+    body,html,.ng-scope{
+        height: 100%;
+    }
+</style>
+
+<body ng-cloak ng-controller="MainController" style="overflow-y:hidden;">
+    <!-- Main body div -->
+    <div layout="column" layout-fill>
+        
+        <!-- Toolbar -->
+        <div flex="10">
+            <md-toolbar layout="row" class="md-warn" style="background-color: #673ab7;" md-whiteframe="3">
+                <!-- Toolbar nav button -->
+                <div layout="column" flex="5" class="md-toolbar-tools" layout-align="center center">
+                    <md-button class="md-icon-button" aria-label="Side Panel" ng-click="openSideNavPanel()">
+                        <i class="material-icons" style="font-size:25px;">view_headline</i>
+                    </md-button>
+                </div>
+                <!-- Search bar -->
+                <div flex>
+
+                </div>
+                <!-- Login button -->
+                <div flex="20" layout="center center">
+                    <md-button class="md-raised md-primary" style="background-color:#ffa726;color:#000000;margin-left:auto; margin-right:10px;" ng-click="login($event)">Login</md-button>
+                </div>
+
+            </md-toolbar>
+
+            <!-- Collapsable navbar -->
+            <md-sidenav class="md-sidenav-left md-whiteframe-z4"
+                    md-component-id="left">
+                <md-toolbar style="height:30%;background-color:#512da8;">
+                    <!-- Put IIT logo here -->
+                    <div class="md-toolbar-tools">
+                        
+                    </div>
+                </md-toolbar> 
+                <md-content ng-click="closeSideNavPanel()">
+                        <!-- Tabs -->
+                        <md-list-item layout="row" ui-sref="{{ item.sref }}" ng-click="showToast(item.name)" style="height:80px;" ng-repeat="item in tabList">
+
+                            <div flex="10" layout-margin layout="column">
+                                <i class="material-icons" style="font-size:30px;">{{ item.icon }}</i>
+                            </div>
+                  
+                            <span flex style="margin-left:10%;font-size:20px;" layout-align="center">{{ item.name }}</span>
+                            
+                            <md-divider></md-divider>
+
+                        </md-list-item>
+
+                </md-content> 
+            </md-sidenav>
+            
+        </div>
+
+        <!-- Content space -->
+        <div flex ui-view style="overflow-y:scroll;">
+            
+        </div>
+
+        <!-- Fab toolbar -->
+        <div flex="10">
+            <md-fab-toolbar md-open="demo.isOpen" count="demo.count"
+                  md-direction="left" style="padding-bottom:auto;padding-top:20px;">
+                <md-fab-trigger >
+                  <md-button aria-label="menu" class="md-fab md-primary">
+                    <md-icon md-svg-src="imports/Pictures/ic_star_rate_white_18px.svg"></md-icon>
+                  </md-button>
+                </md-fab-trigger>
+
+                <md-toolbar>
+                  <md-fab-actions class="md-toolbar-tools">
+                    <md-button aria-label="comment" class="md-icon-button">
+                      <i class="fa fa-facebook-official" aria-hidden="true" style="font-size:24px;"></i>
+
+                    </md-button>
+                    <md-button aria-label="label" class="md-icon-button">
+                      <i class="material-icons" style="font-size:24px;">new_releases</i>
+                    </md-button>
+                    <md-button aria-label="photo" class="md-icon-button">
+                      <i class="material-icons" style="font-size:24px;">new_releases</i>
+                    </md-button>
+                  </md-fab-actions>
+                </md-toolbar>
+          </md-fab-toolbar>
+        </div>
+        
+    </div>
+
+    
+
+</body>
+    
+    <!-- External Imports -->
+    <!-- Angular -->
+    <script src="../imports/angular/angular.js"></script>
+
+    <!-- Angular Sanitize -->
+    <script src="../imports/angular-sanitize/angular-sanitize.js"></script>
+
+     <!-- Material Library -->
+    <script src="../imports/angular-aria/angular-aria.js"></script>
+    <script src="../imports/angular-animate/angular-animate.js"></script>
+    <script src="../imports/angular-material/angular-material.js"></script>
+
+
+
+    <!-- Material Icons -->
+    <script type="text/javascript" src="../imports/angular-material-icons/angular-material-icons.js"></script>
+
+    <!-- UI Router Library -->
+    <script src="../imports/angular-ui-router/release//angular-ui-router.js"></script>
+
+    <!-- Custom JavaScript files -->
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="controllers.js"></script>
+    <script type="text/javascript" src="../innovations/service.js"></script>
+    <script type="text/javascript" src="../login/service.js"></script>
+
+</html>
